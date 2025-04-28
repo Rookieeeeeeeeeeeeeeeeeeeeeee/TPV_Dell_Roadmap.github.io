@@ -1,49 +1,50 @@
-<body>
-  <h1>欢迎来到我的网站！</h1>
-  <p>下面是我的数据可视化展示：</p>
-
-  <!-- Tableau Dashboard 嵌入开始 -->
-  <div class='tableauPlaceholder' id='viz1745768286310' style='position: relative'>
-    <noscript><a href='#'>
-      <img alt='Dashboard ' src='https://public.tableau.com/static/images/De/DellRoadmap/Dashboard/1_rss.png' style='border: none' />
-    </a></noscript>
-    <object class='tableauViz' style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='name' value='DellRoadmap/Dashboard' />
-      <!-- 其他参数 -->
-    </object>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+  <div style="background: linear-gradient(135deg, #4e79a7, #a0c4ff); padding: 40px 20px; text-align: center; color: white;">
+    <h1 style="margin: 0; font-size: 2.5em;">Getting Started with Tableau</h1>
+    <p style="margin-top: 10px; font-size: 1.2em; max-width: 800px; margin-left: auto; margin-right: auto;">
+      Tableau is a powerful data visualization tool that helps you turn raw data into actionable insights. Explore the dashboard below to interact with real-time data and discover key trends.
+    </p>
   </div>
 
-  <script type='text/javascript'>
-    function resizeViz() {
+  <div style="padding: 40px 20px;">
+    <!-- Tableau Dashboard 嵌入开始 -->
+    <div class='tableauPlaceholder' id='viz1745768286310' style='position: relative; max-width: 1200px; margin: auto;'>
+      <noscript><a href='#'>
+        <img alt='Dashboard ' src='https://public.tableau.com/static/images/De/DellRoadmap/Dashboard/1_rss.png' style='border: none' />
+      </a></noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='name' value='DellRoadmap/Dashboard' />
+      </object>
+    </div>
+
+    <script type='text/javascript'>
+      function resizeViz() {
+        var divElement = document.getElementById('viz1745768286310');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else {
+          vizElement.style.width = '100%';
+          vizElement.style.height = '727px';
+        }
+      }
+
       var divElement = document.getElementById('viz1745768286310');
       var vizElement = divElement.getElementsByTagName('object')[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else {
-        vizElement.style.width = '100%';
-        vizElement.style.height = '727px';
-      }
-    }
 
-    var divElement = document.getElementById('viz1745768286310');
-    var vizElement = divElement.getElementsByTagName('object')[0];
+      resizeViz();
 
-    // 初始化加载时设置一次
-    resizeViz();
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
 
-    // 加载 Tableau JS API
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-
-    // 每次窗口变化时，动态重新调整 Tableau 控件大小
-    window.addEventListener('resize', resizeViz);
-  </script>
-  <!-- Tableau Dashboard 嵌入结束 -->
-
+      window.addEventListener('resize', resizeViz);
+    </script>
+    <!-- Tableau Dashboard 嵌入结束 -->
+  </div>
 </body>
